@@ -1,0 +1,29 @@
+# Maven build folder
+/target/
+
+# Eclipse IDE files
+.project
+.classpath
+.settings/
+
+# IntelliJ IDEA files (if ever used)
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TestNG reports
+/test-output/
+
+# Eclipse launch configs
+*.launch
+
+# Maven wrapper files (optional)
+.mvn/
+mvnw
+mvnw.cmd
