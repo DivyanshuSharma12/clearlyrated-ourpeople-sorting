@@ -5,12 +5,14 @@ public class ProfileData {
 	private boolean hasPhoto;
 	private Double starRating;
 	private int totalSurveyResponses;
+	private boolean hasVerifiedLogo;
 
-	public ProfileData(String firstName, boolean hasPhoto, Double starRating, int totalSurveyResponses) {
+	public ProfileData(String firstName, boolean hasPhoto, Double starRating, int totalSurveyResponses, boolean hasVerifiedLogo) {
 		this.firstName = firstName;
 		this.hasPhoto = hasPhoto;
 		this.starRating = starRating;
 		this.totalSurveyResponses = totalSurveyResponses;
+		this.hasVerifiedLogo = hasVerifiedLogo;
 	}
 
 	public String getFirstName() {
@@ -31,7 +33,12 @@ public class ProfileData {
 
 	@Override
 	public String toString() {
-		return "ProfileData{" + "firstName='" + firstName + '\'' + ", hasPhoto=" + hasPhoto + ", starRating="
-				+ (starRating != null ? starRating : "N/A") + ", totalSurveyResponses=" + totalSurveyResponses + '}';
+	    return "ProfileData{" +
+	            "firstName='" + firstName + '\'' +
+	            ", hasPhoto=" + hasPhoto +
+	            ", starRating=" + (starRating != null ? starRating : "N/A") +
+	            ", totalSurveyResponses=" + totalSurveyResponses +
+	            ", hasVerifiedLogo=" + hasVerifiedLogo + // NEW
+	            '}';
 	}
 }

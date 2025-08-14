@@ -57,6 +57,11 @@ public class OurPeoplePage extends BasePage {
 			String name = card.findElement(By.cssSelector(".profilepeople__name--link")).getText().trim();
 			String firstName = name.split(" ")[0];
 
+			// CHECK: Verified Recruiter Logo
+			boolean hasVerifiedLogo = elementExists(card, By.cssSelector(".verified-logo"));
+			if (!hasPhoto && hasVerifiedLogo) {
+				throw new AssertionError("Verified Recruiter Logo is displayed for profile with NO photo: " + name);
+			}
 			Double rating = null;
 			List<WebElement> ratingElements = findElementsQuick(card,
 					By.cssSelector("div.profilepeople-stars__text > span:first-child"));
@@ -80,7 +85,7 @@ public class OurPeoplePage extends BasePage {
 					totalSurveyResponses += Integer.parseInt(num);
 				}
 			}
-			ProfileData profile = new ProfileData(firstName, hasPhoto, rating, totalSurveyResponses);
+			ProfileData profile = new ProfileData(firstName, hasPhoto, rating, totalSurveyResponses, hasVerifiedLogo);
 			profiles.add(profile);
 		}
 
